@@ -1,1 +1,27 @@
-<h1>Example App: Home</h1>
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <form id="new-post">
+            <div class="form-group">
+                <label for="body">New Post</label>
+                <input type="text" name="body" class="form-control"/>
+            </div>
+            <div class="text-right">
+                <button type="submit" class="btn btn-primary btn-sm">Save</button>
+            </div>
+        </form>
+        <hr>
+
+        <ul id="post-list" class="posts">
+            {{#each posts}}
+            <li class="list-group-item">
+                <a href="/posts/{{this._id}}">
+                {{this.body}}
+                </a>
+                <div class="remove-post pull-right" data-id="{{this._id}}">
+                    <i class="ion-trash-a"></i>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
